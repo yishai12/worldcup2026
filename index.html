@@ -93,8 +93,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;min-height:100vh;color:#fff;directi
 // ================================================================
 // ⚠️  ישי — שנה רק את שתי השורות האלה!
 // ================================================================
-const SB_URL = "https://jrhhirwqnkgixwfcwncg.supabase.co";
-const SB_KEY="sb_publishable_Ie3u5FLz6CqUxfvvVM2k-A_8EF-UNy0";
+const SB_URL = "YOUR_SUPABASE_URL";       // לדוגמה: https://abcdef.supabase.co
+const SB_KEY = "YOUR_SUPABASE_ANON_KEY";  // המפתח הארוך שמתחיל ב- eyJ...
 
 // ================================================================
 // נתוני המונדיאל
@@ -315,36 +315,41 @@ const BASE_MATCHES=[
 ].map(x=>({...x,stage:"group",result:null,started:false,finished:false,minute:0}));
 
 const KO_BASE=[
-  {id:201,stage:"r32",label:"מ73: שני A מול שני B",h:"שני בית A",a:"שני בית B",d:"2026-06-28",il:"22:00"},
-  {id:202,stage:"r32",label:"מ74: ראשון E מול 3 טוב A/B/C/D/F",h:"ראשון בית E",a:"3 טוב",d:"2026-06-29",il:"03:30"},
-  {id:203,stage:"r32",label:"מ75: ראשון F מול שני C",h:"ראשון בית F",a:"שני בית C",d:"2026-06-29",il:"04:00"},
-  {id:204,stage:"r32",label:"מ76: ראשון C מול שני F",h:"ראשון בית C",a:"שני בית F",d:"2026-06-29",il:"20:00"},
-  {id:205,stage:"r32",label:"מ77: ראשון I מול 3 טוב C/D/F/G/H",h:"ראשון בית I",a:"3 טוב",d:"2026-06-30",il:"00:00"},
-  {id:206,stage:"r32",label:"מ78: שני E מול שני I",h:"שני בית E",a:"שני בית I",d:"2026-06-30",il:"20:00"},
-  {id:207,stage:"r32",label:"מ79: ראשון A מול 3 טוב C/E/F/H/I",h:"ראשון בית A",a:"3 טוב",d:"2026-07-01",il:"02:00"},
-  {id:208,stage:"r32",label:"מ80: ראשון L מול 3 טוב E/H/I/J/K",h:"ראשון בית L",a:"3 טוב",d:"2026-07-01",il:"19:00"},
-  {id:209,stage:"r32",label:"מ81: ראשון D מול 3 טוב B/E/F/I/J",h:"ראשון בית D",a:"3 טוב",d:"2026-07-01",il:"23:00"},
-  {id:210,stage:"r32",label:"מ82: ראשון G מול 3 טוב A/E/H/I/J",h:"ראשון בית G",a:"3 טוב",d:"2026-07-02",il:"03:00"},
-  {id:211,stage:"r32",label:"מ83: שני K מול שני L",h:"שני בית K",a:"שני בית L",d:"2026-07-02",il:"02:00"},
-  {id:212,stage:"r32",label:"מ84: ראשון H מול שני J",h:"ראשון בית H",a:"שני בית J",d:"2026-07-02",il:"22:00"},
-  {id:213,stage:"r32",label:"מ85: ראשון B מול 3 טוב E/F/G/I/J",h:"ראשון בית B",a:"3 טוב",d:"2026-07-03",il:"06:00"},
-  {id:214,stage:"r32",label:"מ86: ראשון J מול שני H",h:"ראשון בית J",a:"שני בית H",d:"2026-07-03",il:"01:00"},
-  {id:215,stage:"r32",label:"מ87: ראשון K מול 3 טוב D/E/I/J/L",h:"ראשון בית K",a:"3 טוב",d:"2026-07-03",il:"03:30"},
-  {id:216,stage:"r32",label:"מ88: שני D מול שני G",h:"שני בית D",a:"שני בית G",d:"2026-07-04",il:"21:00"},
-  {id:221,stage:"qf",label:"רבע גמר 1 (מ89)",h:"TBD",a:"TBD",d:"2026-07-04",il:"23:00"},
-  {id:222,stage:"qf",label:"רבע גמר 2 (מ90)",h:"TBD",a:"TBD",d:"2026-07-05",il:"03:00"},
-  {id:223,stage:"qf",label:"רבע גמר 3 (מ91)",h:"TBD",a:"TBD",d:"2026-07-08",il:"02:00"},
-  {id:224,stage:"qf",label:"רבע גמר 4 (מ92)",h:"TBD",a:"TBD",d:"2026-07-08",il:"22:00"},
-  {id:225,stage:"qf",label:"רבע גמר 5 (מ93)",h:"TBD",a:"TBD",d:"2026-07-09",il:"21:00"},
-  {id:226,stage:"qf",label:"רבע גמר 6 (מ94)",h:"TBD",a:"TBD",d:"2026-07-10",il:"01:00"},
-  {id:227,stage:"qf",label:"רבע גמר 7 (מ95)",h:"TBD",a:"TBD",d:"2026-07-11",il:"01:00"},
-  {id:228,stage:"qf",label:"רבע גמר 8 (מ96)",h:"TBD",a:"TBD",d:"2026-07-11",il:"22:00"},
-  {id:231,stage:"sf",label:"חצי גמר 1 (מ97)",h:"TBD",a:"TBD",d:"2026-07-14",il:"02:00"},
-  {id:232,stage:"sf",label:"חצי גמר 2 (מ98)",h:"TBD",a:"TBD",d:"2026-07-14",il:"22:00"},
-  {id:233,stage:"sf",label:"חצי גמר 3 (מ99)",h:"TBD",a:"TBD",d:"2026-07-15",il:"02:00"},
-  {id:234,stage:"sf",label:"חצי גמר 4 (מ100)",h:"TBD",a:"TBD",d:"2026-07-16",il:"02:00"},
-  {id:241,stage:"3rd",label:"מקום שלישי (מ103)",h:"TBD",a:"TBD",d:"2026-07-17",il:"22:00"},
-  {id:250,stage:"final",label:"🏆 גמר (מ104) — MetLife Stadium",h:"TBD",a:"TBD",d:"2026-07-19",il:"22:00"},
+  {id:201,stage:"r32",label:"מ73: שני A מול שני B — לוס אנג'לס",h:"שני בית A",a:"שני בית B",d:"2026-06-28",il:"22:00"},
+  {id:202,stage:"r32",label:"מ74: ראשון E מול 3 טוב — בוסטון",h:"ראשון בית E",a:"3 טוב A/B/C/D/F",d:"2026-06-29",il:"03:30"},
+  {id:203,stage:"r32",label:"מ75: ראשון F מול שני C — מונטריי",h:"ראשון בית F",a:"שני בית C",d:"2026-06-29",il:"04:00"},
+  {id:204,stage:"r32",label:"מ76: ראשון C מול שני F — יוסטון",h:"ראשון בית C",a:"שני בית F",d:"2026-06-29",il:"20:00"},
+  {id:205,stage:"r32",label:"מ77: ראשון I מול 3 טוב — ניו יורק",h:"ראשון בית I",a:"3 טוב C/D/F/G/H",d:"2026-06-30",il:"00:00"},
+  {id:206,stage:"r32",label:"מ78: שני E מול שני I — דאלאס",h:"שני בית E",a:"שני בית I",d:"2026-06-30",il:"20:00"},
+  {id:207,stage:"r32",label:"מ79: ראשון A מול 3 טוב — מקסיקו סיטי",h:"ראשון בית A",a:"3 טוב C/E/F/H/I",d:"2026-07-01",il:"02:00"},
+  {id:208,stage:"r32",label:"מ80: ראשון L מול 3 טוב — אטלנטה",h:"ראשון בית L",a:"3 טוב E/H/I/J/K",d:"2026-07-01",il:"19:00"},
+  {id:209,stage:"r32",label:"מ81: ראשון D מול 3 טוב — סן פרנסיסקו",h:"ראשון בית D",a:"3 טוב B/E/F/I/J",d:"2026-07-01",il:"23:00"},
+  {id:210,stage:"r32",label:"מ82: ראשון G מול 3 טוב — סיאטל",h:"ראשון בית G",a:"3 טוב A/E/H/I/J",d:"2026-07-02",il:"03:00"},
+  {id:211,stage:"r32",label:"מ83: שני K מול שני L — טורונטו",h:"שני בית K",a:"שני בית L",d:"2026-07-02",il:"02:00"},
+  {id:212,stage:"r32",label:"מ84: ראשון H מול שני J — לוס אנג'לס",h:"ראשון בית H",a:"שני בית J",d:"2026-07-02",il:"22:00"},
+  {id:213,stage:"r32",label:"מ85: ראשון B מול 3 טוב — ונקובר",h:"ראשון בית B",a:"3 טוב E/F/G/I/J",d:"2026-07-03",il:"06:00"},
+  {id:214,stage:"r32",label:"מ86: ראשון J מול שני H — מיאמי",h:"ראשון בית J",a:"שני בית H",d:"2026-07-03",il:"01:00"},
+  {id:215,stage:"r32",label:"מ87: ראשון K מול 3 טוב — קנזס סיטי",h:"ראשון בית K",a:"3 טוב D/E/I/J/L",d:"2026-07-03",il:"03:30"},
+  {id:216,stage:"r32",label:"מ88: שני D מול שני G — דאלאס",h:"שני בית D",a:"שני בית G",d:"2026-07-04",il:"21:00"},
+  // שמינית גמר (Round of 16) — 4-6 יולי
+  {id:217,stage:"r16",label:"מ89: מנצח מ73 מול מנצח מ75 — יוסטון",h:"מנצח מ73",a:"מנצח מ75",d:"2026-07-04",il:"20:00"},
+  {id:218,stage:"r16",label:"מ90: מנצח מ74 מול מנצח מ77 — פילדלפיה",h:"מנצח מ74",a:"מנצח מ77",d:"2026-07-05",il:"00:00"},
+  {id:219,stage:"r16",label:"מ91: מנצח מ76 מול מנצח מ78 — ניו יורק",h:"מנצח מ76",a:"מנצח מ78",d:"2026-07-05",il:"22:00"},
+  {id:220,stage:"r16",label:"מ92: מנצח מ79 מול מנצח מ80 — מקסיקו סיטי",h:"מנצח מ79",a:"מנצח מ80",d:"2026-07-06",il:"02:00"},
+  {id:221,stage:"r16",label:"מ93: מנצח מ83 מול מנצח מ84 — דאלאס",h:"מנצח מ83",a:"מנצח מ84",d:"2026-07-05",il:"03:00"},
+  {id:222,stage:"r16",label:"מ94: מנצח מ81 מול מנצח מ82 — סיאטל",h:"מנצח מ81",a:"מנצח מ82",d:"2026-07-06",il:"22:00"},
+  {id:223,stage:"r16",label:"מ95: מנצח מ86 מול מנצח מ88 — אטלנטה",h:"מנצח מ86",a:"מנצח מ88",d:"2026-07-07",il:"01:00"},
+  {id:224,stage:"r16",label:"מ96: מנצח מ85 מול מנצח מ87 — ונקובר",h:"מנצח מ85",a:"מנצח מ87",d:"2026-07-07",il:"04:00"},
+  // רבע גמר
+  {id:225,stage:"qf",label:"רבע גמר 1 מ97 — בוסטון",h:"TBD",a:"TBD",d:"2026-07-09",il:"02:00"},
+  {id:226,stage:"qf",label:"רבע גמר 2 מ98 — לוס אנג'לס",h:"TBD",a:"TBD",d:"2026-07-09",il:"22:00"},
+  {id:227,stage:"qf",label:"רבע גמר 3 מ99 — מיאמי",h:"TBD",a:"TBD",d:"2026-07-10",il:"02:00"},
+  {id:228,stage:"qf",label:"רבע גמר 4 מ100 — מקסיקו סיטי",h:"TBD",a:"TBD",d:"2026-07-11",il:"02:00"},
+  // חצי גמר
+  {id:231,stage:"sf",label:"חצי גמר 1 מ101 — דאלאס",h:"TBD",a:"TBD",d:"2026-07-14",il:"02:00"},
+  {id:232,stage:"sf",label:"חצי גמר 2 מ102 — ניו יורק",h:"TBD",a:"TBD",d:"2026-07-15",il:"02:00"},
+  {id:241,stage:"3rd",label:"מקום שלישי מ103 — מיאמי",h:"TBD",a:"TBD",d:"2026-07-17",il:"22:00"},
+  {id:250,stage:"final",label:"🏆 גמר מ104 — MetLife Stadium, ניו יורק",h:"TBD",a:"TBD",d:"2026-07-19",il:"22:00"},
 ].map(x=>({...x,result:null,started:false,finished:false,minute:0}));
 
 // ================================================================
@@ -513,7 +518,7 @@ function rMC(m,inp){
 }
 
 function rMyPreds(){const ms=[...S.matches].sort((a,b)=>new Date(a.d+"T"+a.il)-new Date(b.d+"T"+b.il));return`<div class="card"><h2>הניחושים שלי</h2><div class="snote">ניחוש כיוון = 2 נק' | תוצאה מדויקת = 4 נק' | ניתן לשנות עד דקה לפני המשחק</div>${ms.map(m=>rMC(m,true)).join("")}</div>`;}
-function rMatches(){const ms=[...S.matches].filter(m=>S.mFilter==="all"||m.stage===S.mFilter).sort((a,b)=>new Date(a.d+"T"+a.il)-new Date(b.d+"T"+b.il));return`<div class="card"><h2>כל 104 משחקי המונדיאל 🌍</h2>${S.lastSync?`<div style="font-size:11px;color:#2ecc71;margin-bottom:8px">✅ עדכון: ${S.lastSync}</div>`:""}<div class="fbar">${[{id:"all",l:"הכל"},{id:"group",l:"בתים"},{id:"r32",l:"שמינית"},{id:"qf",l:"רבע"},{id:"sf",l:"חצי"},{id:"final",l:"גמר"}].map(f=>`<button class="fbtn ${S.mFilter===f.id?"active":""}" onclick="setFilter('${f.id}')">${f.l}</button>`).join("")}</div>${ms.map(m=>rMC(m,false)).join("")}</div>`;}
+function rMatches(){const ms=[...S.matches].filter(m=>S.mFilter==="all"||m.stage===S.mFilter).sort((a,b)=>new Date(a.d+"T"+a.il)-new Date(b.d+"T"+b.il));return`<div class="card"><h2>כל 104 משחקי המונדיאל 🌍</h2>${S.lastSync?`<div style="font-size:11px;color:#2ecc71;margin-bottom:8px">✅ עדכון: ${S.lastSync}</div>`:""}<div class="fbar">${[{id:"all",l:"הכל"},{id:"group",l:"בתים"},{id:"r32",l:"32 אחרונות"},{id:"r16",l:"שמינית גמר"},{id:"qf",l:"רבע גמר"},{id:"sf",l:"חצי גמר"},{id:"final",l:"גמר"}].map(f=>`<button class="fbtn ${S.mFilter===f.id?"active":""}" onclick="setFilter('${f.id}')">${f.l}</button>`).join("")}</div>${ms.map(m=>rMC(m,false)).join("")}</div>`;}
 
 async function savePred(mid){
   const m=S.matches.find(x=>x.id===mid);
@@ -543,7 +548,7 @@ function showUserPreds(uid){S.modal={type:"userPreds",uid};render();}
 
 function rGroups(){return`<div class="card"><h2>📊 טבלת הבתים</h2><div class="gg">${Object.entries(GROUPS).map(([g,teams])=>{const rows=teams.map(t=>{const s=S.standings[t]||{pts:0,w:0,l:0,d:0};return{n:t,...s};}).sort((a,b)=>b.pts-a.pts);return`<div class="gcard"><h3>בית ${g}</h3><table class="gtable"><thead><tr><th>נבחרת</th><th>נק'</th><th>נצ'</th><th>הפ'</th><th>תי'</th></tr></thead><tbody>${rows.map(t=>`<tr><td style="text-align:right;cursor:pointer" onclick="showSquad('${t.n}')">${FLAGS[t.n]||"🏳"} ${t.n}</td><td>${t.pts}</td><td>${t.w}</td><td>${t.l}</td><td>${t.d}</td></tr>`).join("")}</tbody></table></div>`;}).join("")}</div></div>`;}
 
-function rKnockout(){const rounds=[{l:"שמינית גמר",s:"r32"},{l:"רבע גמר",s:"qf"},{l:"חצי גמר",s:"sf"},{l:"גמר",s:"final"}];return`<div class="card"><h2>⚔️ נוקאאוט</h2><div style="overflow-x:auto"><div style="display:flex;gap:12px;min-width:540px;padding:8px 0">${rounds.map(r=>`<div style="flex:1;min-width:128px"><div style="color:#f9ca24;font-size:11px;font-weight:700;margin-bottom:8px;text-align:center">${r.l}</div>${S.matches.filter(m=>m.stage===r.s).map(m=>{const win=m.result?(m.result.home>m.result.away?m.h:m.result.away>m.result.home?m.a:null):null;return`<div class="bmatch"><div class="bteam ${win===m.h?"win":""}">${FLAGS[m.h]||"🏳"} ${m.h}${m.result?` ${m.result.home}`:""}</div><div class="bteam ${win===m.a?"win":""}">${FLAGS[m.a]||"🏳"} ${m.a}${m.result?` ${m.result.away}`:""}</div><div style="font-size:9px;opacity:.5;margin-top:3px;text-align:center">${fmtDate(m.d)} ${m.il}</div></div>`;}).join("")}</div>`).join("")}</div></div></div>`;}
+function rKnockout(){const rounds=[{l:"32 אחרונות",s:"r32"},{l:"שמינית גמר",s:"r16"},{l:"רבע גמר",s:"qf"},{l:"חצי גמר",s:"sf"},{l:"גמר",s:"final"}];return`<div class="card"><h2>⚔️ נוקאאוט</h2><div style="overflow-x:auto"><div style="display:flex;gap:12px;min-width:540px;padding:8px 0">${rounds.map(r=>`<div style="flex:1;min-width:128px"><div style="color:#f9ca24;font-size:11px;font-weight:700;margin-bottom:8px;text-align:center">${r.l}</div>${S.matches.filter(m=>m.stage===r.s).map(m=>{const win=m.result?(m.result.home>m.result.away?m.h:m.result.away>m.result.home?m.a:null):null;return`<div class="bmatch"><div class="bteam ${win===m.h?"win":""}">${FLAGS[m.h]||"🏳"} ${m.h}${m.result?` ${m.result.home}`:""}</div><div class="bteam ${win===m.a?"win":""}">${FLAGS[m.a]||"🏳"} ${m.a}${m.result?` ${m.result.away}`:""}</div><div style="font-size:9px;opacity:.5;margin-top:3px;text-align:center">${fmtDate(m.d)} ${m.il}</div></div>`;}).join("")}</div>`).join("")}</div></div></div>`;}
 
 function rPoints(){return`<div class="card"><h2>📋 מפתח הנקודות</h2><div class="ptguide"><h3>מה מרוויחים?</h3><div class="prow"><span>ניחוש כיוון (ניצחון / הפסד / תיקו)</span><span><strong>2 נקודות</strong></span></div><div class="prow"><span>ניחוש תוצאה מדויקת</span><span><strong>4 נקודות</strong></span></div><div class="prow"><span>מלך השערים נכון</span><span><strong>5 נקודות</strong></span></div><div class="prow"><span>אלופת הטורניר נכון</span><span><strong>10 נקודות</strong></span></div></div><div class="snote">• ניחוש ניתן לשינוי עד דקה לפני המשחק<br>• תוצאות מתעדכנות <strong>אוטומטית</strong> מ-OpenFootball כל 3 דקות<br>• ניחושים מיוחדים נעולים עם תחילת המונדיאל<br>• הניקוד מחושב ומתעדכן לכולם אחרי כל משחק</div></div>`;}
 
